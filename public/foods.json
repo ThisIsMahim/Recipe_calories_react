@@ -1,0 +1,98 @@
+[
+    {
+      "recipe_id": 1,
+      "recipe_name": "Grilled Chicken Salad",
+      "food_img": "/food1.png",
+      "food_desc": "A refreshing salad with grilled chicken, perfect for a light meal.",
+      "ingredients": [
+        "250 g grilled chicken",
+        "100 g mixed greens",
+        "50 g cherry tomatoes",
+        "30 g feta cheese",
+        "50 ml olive oil",
+        "10 ml balsamic vinegar"
+      ],
+      "cook_time": 20,
+      "calorie": 320
+    },
+    {
+      "recipe_id": 2,
+      "recipe_name": "Spaghetti Bolognese",
+      "food_img": "/food2.png",
+      "food_desc": "Classic Italian pasta with rich bolognese sauce.",
+      "ingredients": [
+        "200 g spaghetti",
+        "150 g minced beef",
+        "50 g tomato sauce",
+        "1 onion, chopped",
+        "2 cloves garlic",
+        "10 g basil"
+      ],
+      "cook_time": 40,
+      "calorie": 450
+    },
+    {
+      "recipe_id": 3,
+      "recipe_name": "Chicken Stir Fry",
+      "food_img": "/food3.png",
+      "food_desc": "Quick and healthy stir fry with vegetables and chicken.",
+      "ingredients": [
+        "200 g chicken breast",
+        "100 g bell peppers",
+        "100 g broccoli",
+        "30 ml soy sauce",
+        "10 ml sesame oil",
+        "1 tsp ginger"
+      ],
+      "cook_time": 30,
+      "calorie": 350
+    },
+    {
+      "recipe_id": 4,
+      "recipe_name": "Veggie Tacos",
+      "food_img": "/food4.png",
+      "food_desc": "Flavorful vegetarian tacos packed with fresh veggies.",
+      "ingredients": [
+        "4 corn tortillas",
+        "100 g black beans",
+        "50 g corn kernels",
+        "50 g diced tomatoes",
+        "30 g shredded lettuce",
+        "10 g shredded cheese"
+      ],
+      "cook_time": 15,
+      "calorie": 250
+    },
+    {
+      "recipe_id": 5,
+      "recipe_name": "Pancakes with Berries",
+      "food_img": "/food5.png",
+      "food_desc": "Fluffy pancakes topped with fresh berries and syrup.",
+      "ingredients": [
+        "200 g pancake mix",
+        "150 ml milk",
+        "1 egg",
+        "50 g blueberries",
+        "50 g strawberries",
+        "30 ml maple syrup"
+      ],
+      "cook_time": 25,
+      "calorie": 380
+    },
+    {
+      "recipe_id": 6,
+      "recipe_name": "Beef Burger",
+      "food_img": "/food6.png",
+      "food_desc": "Juicy beef burger with cheese, lettuce, and tomato.",
+      "ingredients": [
+        "150 g beef patty",
+        "1 burger bun",
+        "20 g lettuce",
+        "1 slice tomato",
+        "1 slice cheese",
+        "10 g mayo"
+      ],
+      "cook_time": 15,
+      "calorie": 520
+    }
+  ]
