@@ -22,12 +22,12 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/recipe-discovery-site.git
+   git clone https://github.com/ThisIsMahim/Recipe_calories_react.git
    ```
    
 2. **Navigate to the project directory:**
    ```bash
-   cd recipe-discovery-site
+   cd Recipe_calories_react
    ```
    
 3. **Install dependencies:**
@@ -37,7 +37,7 @@ To run this project locally, follow these steps:
    
 4. **Start the development server:**
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
