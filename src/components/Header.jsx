@@ -1,27 +1,68 @@
 /* eslint-disable react/no-unknown-property */
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { CiMenuBurger } from "react-icons/ci";
+import { IoClose } from "react-icons/io5";
 
-const Header = ({scrollIntoMain}) => {
-    const inputRef=useRef(null)
-    // toggling theme functionality
+const Header = ({ scrollIntoMain }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const openMenu = () => setMenuOpen(!menuOpen);
+  const inputRef = useRef(null);
+  // toggling theme functionality
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
   const toggleTheme = () => {
-    console.log("theme btn")
+    console.log("theme btn");
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
     <div>
       <div className="navbar justify-between bg-base-100 font-lexend">
+        {" "}
+        <div className="lg:hidden flex relative text-2xl">
+          <div onClick={openMenu} className="z-10 cursor-pointer">
+            {menuOpen ? <IoClose /> : <CiMenuBurger />}
+          </div>
+          {menuOpen && (
+            <div className="absolute bg-white bg-opacity-90 top-0 left-0 p-5 rounded-lg">
+              <ul className="flex flex-col gap-3 text-[#150b2bb2] dark:text-gray-300">
+                <li>
+                  <a className="cursor-pointer hover:text-[#150b2b] text-[16px]">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="cursor-pointer hover:text-[#150b2b] text-[16px]"
+                    onClick={scrollIntoMain}
+                  >
+                    Recipes
+                  </a>
+                </li>
+                <li>
+                  <a className="cursor-pointer hover:text-[#150b2b] text-[16px]">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="cursor-pointer hover:text-[#150b2b] dark:text-gray-300 text-[16px]"
+                    onClick={() => inputRef.current.focus()}
+                  >
+                    Search
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
         <div className="">
           <a className="btn btn-ghost text-2xl text-[#150b2b] dark:text-white font-bold p-0">
             Recipe Calories
           </a>
         </div>
-
-        <div>
+        <div className="">
           <ul className="lg:flex hidden gap-3 text-[#150b2bb2] dark:text-gray-300">
             <li>
               <a className="cursor-pointer hover:text-[#150b2b] text-[16px]">
@@ -29,7 +70,10 @@ const Header = ({scrollIntoMain}) => {
               </a>
             </li>
             <li>
-              <a className="cursor-pointer hover:text-[#150b2b] text-[16px]" onClick={scrollIntoMain}>
+              <a
+                className="cursor-pointer hover:text-[#150b2b] text-[16px]"
+                onClick={scrollIntoMain}
+              >
                 Recipes
               </a>
             </li>
@@ -39,17 +83,19 @@ const Header = ({scrollIntoMain}) => {
               </a>
             </li>
             <li>
-              <a className="cursor-pointer hover:text-[#150b2b] dark:text-gray-300 text-[16px]" onClick={()=>inputRef.current.focus()}>
+              <a
+                className="cursor-pointer hover:text-[#150b2b] dark:text-gray-300 text-[16px]"
+                onClick={() => inputRef.current.focus()}
+              >
                 Search
               </a>
             </li>
           </ul>
         </div>
-
         <div className="flex-none gap-2">
-          <div className="form-control ">
+          <div className="form-control hidden md:block ">
             <input
-            ref={inputRef}
+              ref={inputRef}
               type="text"
               placeholder="Search"
               className="input input-bordered w-24 md:w-auto"
@@ -57,18 +103,30 @@ const Header = ({scrollIntoMain}) => {
           </div>
 
           <div>
-  <button onClick={toggleTheme}
-        className="h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-        <svg className="fill-violet-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-        </svg>
-        <svg className="fill-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-            <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fill-rule="evenodd" clip-rule="evenodd"></path>
-        </svg>
-    </button>
-</div>
+            <button
+              onClick={toggleTheme}
+              className="h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <svg
+                className="fill-violet-700 block dark:hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg
+                className="fill-yellow-500 hidden dark:block"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
 
           <div className="dropdown dropdown-end">
             <div

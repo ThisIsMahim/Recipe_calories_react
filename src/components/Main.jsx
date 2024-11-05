@@ -25,7 +25,7 @@ const addToWannaCook=(food)=>{
           elementum mauris aenean neque.
         </p>
       </div>
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col lg:flex-row gap-6">
         <div className="grid md:grid-cols-2 gap-6">
           {foods.map((food) => (
             <FoodCard key={food.recipe_id} food={food} addToWannaCook={addToWannaCook} />
